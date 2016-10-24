@@ -2,24 +2,31 @@
 
 return [
     'plugin' => [
-        'name' => 'Tartalom beillesztése',
+        'name' => 'Tartalomcsere',
         'description' => 'Tetszőleges tartalmak beszúrása blogba és más helyekre.',
         'author' => 'Szabó Gergő'
     ],
     'menu' => [
-        'text' => 'Szöveg'
+        'text' => 'Szöveg',
+        'code' => 'Kód'
     ],
     'title' => [
-        'text' => 'szöveg'
+        'text' => 'szöveg',
+        'code' => 'kód'
     ],
     'new' => [
-        'text' => 'Új szöveg'
+        'text' => 'Új szöveg',
+        'code' => 'Új kód'
     ],
     'form' => [
         'code' => 'Kód',
         'name' => 'Név',
         'content' => 'Tartalom',
         'common' => 'Megjegyzés',
+        'type' => 'Típus',
+        'type_html' => 'HTML',
+        'type_js' => 'JavaScript',
+        'type_css' => 'CSS',
         'status' => 'Státusz',
         'status_active' => 'Aktív',
         'status_inactive' => 'Inaktív',
@@ -43,6 +50,7 @@ return [
         'remove' => 'Az eltávolítás sikeresen megtörtént.'
     ],
     'permission' => [
-        'text' => 'Szövegek kezelése'
+        'text' => 'Szövegek kezelése',
+        'code' => 'Kódok kezelése'
     ]
 ];

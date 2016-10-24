@@ -1,3 +1,6 @@
 1.0.0:
     - First version of Paste Content plugin.
     - create_paste_text_table.php
+1.0.1:
+    - Added the Code page.
+    - create_paste_code_table.php

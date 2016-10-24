@@ -1,0 +1,47 @@
+# ===================================
+#  Field Definitions
+# ===================================
+
+fields:
+
+    code:
+        label: indikator.paste::lang.form.code
+        required: true
+        span: auto
+
+    name:
+        label: indikator.paste::lang.form.name
+        span: auto
+
+    content:
+        label: indikator.paste::lang.form.content
+        type: codeeditor
+        language: html
+        size: huge
+
+secondaryTabs:
+    fields:
+
+        common:
+            label: indikator.paste::lang.form.common
+            type: textarea
+            size: small
+
+        type:
+            label: indikator.paste::lang.form.type
+            required: true
+            type: radio
+            options:
+                1: indikator.paste::lang.form.type_html
+                2: indikator.paste::lang.form.type_js
+                3: indikator.paste::lang.form.type_css
+            default: 1
+
+        status:
+            label: indikator.paste::lang.form.status
+            required: true
+            type: radio
+            options:
+                1: indikator.paste::lang.form.status_active
+                2: indikator.paste::lang.form.status_inactive
+            default: 1

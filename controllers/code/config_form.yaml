@@ -1,0 +1,17 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+name: indikator.paste::lang.title.code
+form: ~/plugins/indikator/paste/models/code/fields.yaml
+
+modelClass: Indikator\Paste\Models\Code
+defaultRedirect: indikator/paste/code
+
+create:
+    redirect: indikator/paste/code/update/:id
+    redirectClose: indikator/paste/code
+
+update:
+    redirect: indikator/paste/code/update/:id
+    redirectClose: indikator/paste/code

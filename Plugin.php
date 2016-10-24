@@ -4,6 +4,7 @@ use System\Classes\PluginBase;
 use System\Classes\SettingsManager;
 use Backend;
 use Indikator\Paste\Models\Text;
+use Indikator\Paste\Models\Code;
 
 class Plugin extends PluginBase
 {
@@ -25,7 +26,7 @@ class Plugin extends PluginBase
                 'label'       => 'indikator.paste::lang.plugin.name',
                 'url'         => Backend::url('indikator/paste/text'),
                 'icon'        => 'icon-clipboard',
-                'permissions' => ['indikator.paste'],
+                'permissions' => ['indikator.paste.*'],
                 'order'       => 500,
                 'sideMenu' => [
                     'text' => [
@@ -33,6 +34,12 @@ class Plugin extends PluginBase
                         'url'         => Backend::url('indikator/paste/text'),
                         'icon'        => 'icon-file-text',
                         'permissions' => ['indikator.paste.text']
+                    ],
+                    'code' => [
+                        'label'       => 'indikator.paste::lang.menu.code',
+                        'url'         => Backend::url('indikator/paste/code'),
+                        'icon'        => 'icon-file-code-o',
+                        'permissions' => ['indikator.paste.code']
                     ]
                 ]
             ]
@@ -45,6 +52,10 @@ class Plugin extends PluginBase
             'indikator.paste.text' => [
                 'tab'   => 'indikator.paste::lang.plugin.name',
                 'label' => 'indikator.paste::lang.permission.text'
+            ],
+            'indikator.paste.code' => [
+                'tab'   => 'indikator.paste::lang.plugin.name',
+                'label' => 'indikator.paste::lang.permission.code'
             ]
         ];
     }
@@ -60,7 +71,20 @@ class Plugin extends PluginBase
 
     public function paste($text)
     {
-        $sql = Text::get();
+        $text = $this->pasteContent($text, 'text');
+        $text = $this->pasteContent($text, 'code');
+
+        return $text;
+    }
+
+    public function pasteContent($text = '', $type = 'text')
+    {
+        if ($type == 'text') {
+            $sql = Text::get();
+        }
+        else {
+            $sql = Code::get();
+        }
 
         foreach ($sql as $item) {
             if ($item->status == 1) {

@@ -7,19 +7,26 @@ return [
         'author' => 'Gergő Szabó'
     ],
     'menu' => [
-        'text' => 'Text'
+        'text' => 'Text',
+        'code' => 'Code'
     ],
     'title' => [
-        'text' => 'text'
+        'text' => 'text',
+        'code' => 'code'
     ],
     'new' => [
-        'text' => 'New text'
+        'text' => 'New text',
+        'code' => 'New code'
     ],
     'form' => [
         'code' => 'Code',
         'name' => 'Name',
         'content' => 'Content',
         'common' => 'Common',
+        'type' => 'Type',
+        'type_html' => 'HTML',
+        'type_js' => 'JavaScript',
+        'type_css' => 'CSS',
         'status' => 'Status',
         'status_active' => 'Active',
         'status_inactive' => 'Inactive',
@@ -43,6 +50,7 @@ return [
         'remove' => 'Successfully removed those items.'
     ],
     'permission' => [
-        'text' => 'Manage texts'
+        'text' => 'Manage texts',
+        'code' => 'Manage codes'
     ]
 ];
