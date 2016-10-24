@@ -41,8 +41,8 @@ ADVERTISEMENT HERE
 Fusce ac fermentum libero vel mollis arcu, velit ad amet aliquet. Tellus leo, vehicula odio pede, in elementum, donec aenean vulputate dui non, ultricies laoreet neque tortor massa. Fermentum volutpat cras vitae vel lacus.
 
 ## Available languages
-* en - __English__
-* hu - __Magyar__
+* en - English
+* hu - Magyar
 
 ## Installation
 1. Go to the __Settings > Updates & Plugins__ page in the Backend.
