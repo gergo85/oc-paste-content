@@ -26,6 +26,16 @@ secondaryTabs:
             type: textarea
             size: small
 
+        type:
+            label: indikator.paste::lang.form.type
+            required: true
+            type: radio
+            options:
+                1: indikator.paste::lang.form.type_text
+                2: indikator.paste::lang.form.type_image
+                3: indikator.paste::lang.form.type_mixed
+            default: 1
+
         status:
             label: indikator.paste::lang.form.status
             required: true

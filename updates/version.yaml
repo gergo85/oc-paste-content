@@ -4,3 +4,7 @@
 1.0.1:
     - Added the Code page.
     - create_paste_code_table.php
+1.0.2:
+    - Added Type field to the Text page.
+    - add_type_field_to_text_table.php
+    - update_timestamp_nullable.php

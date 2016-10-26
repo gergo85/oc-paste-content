@@ -14,6 +14,21 @@ scopes:
         type: checkbox
         conditions: status = 2
 
+    text:
+        label: indikator.paste::lang.form.type_text
+        type: checkbox
+        conditions: type = 1
+
+    image:
+        label: indikator.paste::lang.form.type_image
+        type: checkbox
+        conditions: type = 2
+
+    mixed:
+        label: indikator.paste::lang.form.type_mixed
+        type: checkbox
+        conditions: type = 3
+
     created_date:
         label: indikator.paste::lang.list.created_at
         type: daterange
