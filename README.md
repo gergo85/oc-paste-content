@@ -3,10 +3,10 @@ Use this plugin if you want to paste predetermined HTML content (snippets) to th
 
 ## Advantages
 * __It works with any plugin__ (e.g. Blog, News & Newsletter, Content Plus).
-* __Easy to manage snippets__ on the Paste Content page.
+* __Easy to paste snippets__ with the build-in WYSIWYG editor.
 
 ## Usage steps
-1. Add a new content on the __Settings > CMS > Paste Content__ page.
+1. Add a new content on the __Paste Content__ page.
 1. __Paste the code__ of content to the blog post or other text.
 1. Use the __paste__ Twig filter on the front-end pages.
 

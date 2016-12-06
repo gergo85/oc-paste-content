@@ -5,6 +5,7 @@ use System\Classes\SettingsManager;
 use Backend;
 use Indikator\Paste\Models\Text;
 use Indikator\Paste\Models\Code;
+use Backend\FormWidgets\RichEditor;
 
 class Plugin extends PluginBase
 {
@@ -107,5 +108,13 @@ class Plugin extends PluginBase
         }
 
         return $text;
+    }
+
+    public function boot()
+    {
+        RichEditor::extend(function($widget) {
+            $widget->addJs('/indikator/paste/list.js');
+            $widget->addJs('/plugins/indikator/paste/assets/js/froala.paste.plugin.js');
+        });
     }
 }

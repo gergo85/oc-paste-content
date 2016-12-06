@@ -7,4 +7,6 @@
 1.0.2:
     - Added Type field to the Text page.
     - add_type_field_to_text_table.php
+1.0.3:
+    - Paste snippets via build-in editor.
     - update_timestamp_nullable.php
