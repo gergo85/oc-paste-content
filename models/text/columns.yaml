@@ -4,6 +4,16 @@
 
 columns:
 
+    id:
+        label: indikator.paste::lang.form.id
+        invisible: true
+
+    type:
+        label: indikator.paste::lang.form.type
+        searchable: true
+        type: partial
+        path: ~/plugins/indikator/paste/models/text/_type.htm
+
     code:
         label: indikator.paste::lang.form.code
         searchable: true
