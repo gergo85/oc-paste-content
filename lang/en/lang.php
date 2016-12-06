@@ -19,6 +19,7 @@ return [
         'code' => 'New code'
     ],
     'form' => [
+        'id' => 'ID',
         'code' => 'Code',
         'name' => 'Name',
         'content' => 'Content',

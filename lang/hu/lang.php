@@ -19,6 +19,7 @@ return [
         'code' => 'Új kód'
     ],
     'form' => [
+        'id' => 'ID',
         'code' => 'Kód',
         'name' => 'Név',
         'content' => 'Tartalom',
