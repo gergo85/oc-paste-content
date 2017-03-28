@@ -2,7 +2,7 @@
 Use this plugin if you want to paste predetermined HTML content (snippets) to the blog post or other text.
 
 ## Advantages
-* __It works with any plugin__ (e.g. Blog, News & Newsletter, Content Plus).
+* __It works with any plugins__ (e.g. Blog, News & Newsletter, Content Plus).
 * __Easy to paste snippets__ with the build-in WYSIWYG editor.
 
 ## Usage steps

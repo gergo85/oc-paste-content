@@ -1,7 +1,6 @@
 <?php namespace Indikator\Paste;
 
 use System\Classes\PluginBase;
-use System\Classes\SettingsManager;
 use Backend;
 use Indikator\Paste\Models\Text;
 use Indikator\Paste\Models\Code;
@@ -29,6 +28,7 @@ class Plugin extends PluginBase
                 'icon'        => 'icon-clipboard',
                 'permissions' => ['indikator.paste.*'],
                 'order'       => 500,
+
                 'sideMenu' => [
                     'text' => [
                         'label'       => 'indikator.paste::lang.menu.text',
