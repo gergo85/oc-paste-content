@@ -16,7 +16,7 @@ class Code extends Controller
     public $formConfig = 'config_form.yaml';
     public $listConfig = 'config_list.yaml';
 
-    public $requiredPermissions = ['indikator.paste'];
+    public $requiredPermissions = ['indikator.paste.code'];
 
     public $bodyClass = 'compact-container';
 
