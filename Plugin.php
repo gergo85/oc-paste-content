@@ -26,6 +26,7 @@ class Plugin extends PluginBase
                 'label'       => 'indikator.paste::lang.plugin.name',
                 'url'         => Backend::url('indikator/paste/text'),
                 'icon'        => 'icon-clipboard',
+                'iconSvg'     => 'plugins/indikator/paste/assets/images/paste-icon.svg',
                 'permissions' => ['indikator.paste.*'],
                 'order'       => 500,
 
