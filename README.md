@@ -1,19 +1,53 @@
 # Paste Content plugin
-Use this plugin if you want to paste predetermined HTML content (snippets) to the blog post or other text.
+Use this plugin if you want to paste own predetermined HTML content (snippets) to the CMS or plugins.
 
 ## Advantages
-* __It works with any plugins__ (e.g. Blog, News & Newsletter, Content Plus).
+* __It works with build-in CMS__ (Pages, Partials and Layout).
+* __It works with any plugins__ ([News & Newsletter](http://octobercms.com/plugin/indikator-news), [Content Plus](http://octobercms.com/plugin/indikator-content), etc.).
 * __Easy to paste snippets__ with the build-in WYSIWYG editor.
 
-## Usage steps
+## Works with CMS
+### Usage steps
+1. Add a new content on the __Paste Content__ page.
+1. Use the __paste__ Twig function.
+1. Add the __type and code__ of content.
+
+### Example
+__Predetermined content__
+
+Code: ads
+
+Text: ADVERTISEMENT HERE
+
+__HTML code__
+```
+<p>Lorem ipsum dolor sit amet, nibh aute et sodales at arcu, urna libero, euismod pharetra vestibulum tristique praesent. Ligula integer natoque ut praesent sapien, ligula placerat nisl neque id commodi, quis dictum sit erat ante mollis nascetur.</p>
+
+{{ paste('text', 'ads') }}
+```
+
+__The result__
+
+Lorem ipsum dolor sit amet, nibh aute et sodales at arcu, urna libero, euismod pharetra vestibulum tristique praesent. Ligula integer natoque ut praesent sapien, ligula placerat nisl neque id commodi, quis dictum sit erat ante mollis nascetur.
+
+ADVERTISEMENT HERE
+
+### Twig function options
+Name | Description
+----------- | -----------
+First parameter | The type of content: _text_ or _code_
+Second parameter | The code of content (without brackets)
+
+## Works with plugins
+### Usage steps
 1. Add a new content on the __Paste Content__ page.
 1. __Paste the code__ of content to the blog post or other text.
 1. Use the __paste__ Twig filter on the front-end pages.
 
-## Example
+### Example
 __Predetermined content__
 
-Code: {{ads}}
+Code: ads
 
 Text: ADVERTISEMENT HERE
 
@@ -23,13 +57,9 @@ Lorem ipsum dolor sit amet, nibh aute et sodales at arcu, urna libero, euismod p
 
 {{ads}}
 
-Fusce ac fermentum libero vel mollis arcu, velit ad amet aliquet. Tellus leo, vehicula odio pede, in elementum, donec aenean vulputate dui non, ultricies laoreet neque tortor massa. Fermentum volutpat cras vitae vel lacus.
-
 __HTML code__
 ```
-<div class="container">
-	{{ post.content_html|paste }}
-</div>
+{{ post.content_html|paste }}
 ```
 
 __The result__
@@ -37,8 +67,6 @@ __The result__
 Lorem ipsum dolor sit amet, nibh aute et sodales at arcu, urna libero, euismod pharetra vestibulum tristique praesent. Ligula integer natoque ut praesent sapien, ligula placerat nisl neque id commodi, quis dictum sit erat ante mollis nascetur.
 
 ADVERTISEMENT HERE
-
-Fusce ac fermentum libero vel mollis arcu, velit ad amet aliquet. Tellus leo, vehicula odio pede, in elementum, donec aenean vulputate dui non, ultricies laoreet neque tortor massa. Fermentum volutpat cras vitae vel lacus.
 
 ## Available languages
 * en - English

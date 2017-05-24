@@ -67,6 +67,22 @@ class Plugin extends PluginBase
         return [
             'filters' => [
                 'paste' => [$this, 'paste']
+            ],
+            'functions' => [
+                'paste' => function($filter = 'text', $code = 0) {
+                    if (!is_string($filter) || !is_string($code)) {
+                        return '';
+                    }
+
+                    if ($filter == 'text' && Text::where(['code' => $code, 'status' => 1])->count() == 1) {
+                        return Text::where('code', $code)->pluck('content');
+                    }
+                    else if ($filter == 'code' && Code::where(['code' => $code, 'status' => 1])->count() == 1) {
+                        return Code::where('code', $code)->pluck('content');
+                    }
+
+                    return '';
+                }
             ]
         ];
     }
