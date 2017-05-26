@@ -69,16 +69,27 @@ class Plugin extends PluginBase
                 'paste' => [$this, 'paste']
             ],
             'functions' => [
-                'paste' => function($filter = 'text', $code = 0) {
-                    if (!is_string($filter) || !is_string($code)) {
+                'paste' => function($filter = 'text', $param = 0) {
+                    if ($filter != 'text' && $filter != 'code') {
                         return '';
                     }
 
-                    if ($filter == 'text' && Text::where(['code' => $code, 'status' => 1])->count() == 1) {
-                        return Text::where('code', $code)->pluck('content');
+                    if ($filter == 'text') {
+                        if (is_string($param) && Text::where(['code' => $param, 'status' => 1])->count() == 1) {
+                            return Text::where('code', $param)->pluck('content');
+                        }
+                        else if (is_numeric($param) && Text::where(['id' => $param, 'status' => 1])->count() == 1) {
+                            return Text::where('id', $param)->pluck('content');
+                        }
                     }
-                    else if ($filter == 'code' && Code::where(['code' => $code, 'status' => 1])->count() == 1) {
-                        return Code::where('code', $code)->pluck('content');
+
+                    else {
+                        if (is_string($code) && Code::where(['code' => $param, 'status' => 1])->count() == 1) {
+                            return Code::where('code', $param)->pluck('content');
+                        }
+                        else if (is_numeric($param) && Code::where(['id' => $param, 'status' => 1])->count() == 1) {
+                            return Code::where('id', $param)->pluck('content');
+                        }
                     }
 
                     return '';

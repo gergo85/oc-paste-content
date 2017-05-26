@@ -36,7 +36,7 @@ ADVERTISEMENT HERE
 Name | Description
 ----------- | -----------
 First parameter | The type of content: _text_ or _code_
-Second parameter | The code of content (without brackets)
+Second parameter | The code of content (without brackets) or the ID of content
 
 ## Works with plugins
 ### Usage steps

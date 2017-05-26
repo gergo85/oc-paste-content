@@ -13,3 +13,4 @@
 1.0.4: Minor improvements.
 1.0.5: Added new icon for main navigation.
 1.1.0: Paste operation works in the CMS too.
+1.1.1: Improved the paste Twig function.
