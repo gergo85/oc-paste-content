@@ -1,0 +1,17 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+name: indikator.paste::lang.title.category
+form: ~/plugins/indikator/paste/models/blockcategory/fields.yaml
+
+modelClass: Indikator\Paste\Models\BlockCategory
+defaultRedirect: indikator/paste/blockcategory
+
+create:
+    redirect: indikator/paste/blockcategory/update/:id
+    redirectClose: indikator/paste/blockcategory
+
+update:
+    redirect: indikator/paste/blockcategory/update/:id
+    redirectClose: indikator/paste/blockcategory

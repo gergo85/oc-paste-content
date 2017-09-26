@@ -1,0 +1,83 @@
+# ===================================
+#  Field Definitions
+# ===================================
+
+fields:
+
+    code:
+        label: indikator.paste::lang.form.code
+        required: true
+        span: auto
+
+    name:
+        label: indikator.paste::lang.form.name
+        span: auto
+
+    title:
+        label: indikator.paste::lang.form.title
+        span: auto
+
+    subtitle:
+        label: indikator.paste::lang.form.subtitle
+        span: auto
+
+tabs:
+    fields:
+
+        content:
+            tab: indikator.paste::lang.form.content
+            label: 
+            type: richeditor
+            size: huge
+
+        button_name:
+            tab: indikator.paste::lang.form.button
+            label: indikator.paste::lang.form.button_name
+            span: auto
+
+        button_link:
+            tab: indikator.paste::lang.form.button
+            label: indikator.paste::lang.form.button_link
+            span: auto
+
+        button_class:
+            tab: indikator.paste::lang.form.button
+            label: indikator.paste::lang.form.button_class
+            span: auto
+
+        button_position:
+            tab: indikator.paste::lang.form.button
+            label: indikator.paste::lang.form.button_position
+            type: dropdown
+            options:
+                left: indikator.paste::lang.form.pos_left
+                center: indikator.paste::lang.form.pos_center
+                right: indikator.paste::lang.form.pos_right
+            default: 1
+            span: auto
+
+secondaryTabs:
+    fields:
+
+        image:
+            label: indikator.paste::lang.form.image
+            type: mediafinder
+            mode: image
+
+        category:
+            label: indikator.paste::lang.form.category
+            type: dropdown
+
+        status:
+            label: indikator.paste::lang.form.status
+            required: true
+            type: radio
+            options:
+                1: indikator.paste::lang.form.status_active
+                2: indikator.paste::lang.form.status_inactive
+            default: 1
+            span: auto
+
+        sort_order:
+            label: indikator.paste::lang.form.sort_order
+            span: auto

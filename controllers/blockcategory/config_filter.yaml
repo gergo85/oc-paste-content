@@ -1,0 +1,15 @@
+# ===================================
+# Filter Scope Definitions
+# ===================================
+
+scopes:
+
+    created_date:
+        label: indikator.paste::lang.list.created_at
+        type: daterange
+        conditions: created_at >= ':after' AND created_at <= ':before'
+
+    updated_date:
+        label: indikator.paste::lang.list.updated_at
+        type: daterange
+        conditions: updated_at >= ':after' AND updated_at <= ':before'

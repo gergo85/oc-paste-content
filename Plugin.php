@@ -2,8 +2,10 @@
 
 use System\Classes\PluginBase;
 use Backend;
+use Lang;
 use Indikator\Paste\Models\Text;
 use Indikator\Paste\Models\Code;
+use Indikator\Paste\Models\Block;
 use Backend\FormWidgets\RichEditor;
 
 class Plugin extends PluginBase
@@ -24,13 +26,19 @@ class Plugin extends PluginBase
         return [
             'paste' => [
                 'label'       => 'indikator.paste::lang.plugin.name',
-                'url'         => Backend::url('indikator/paste/text'),
+                'url'         => Backend::url('indikator/paste/block'),
                 'icon'        => 'icon-clipboard',
                 'iconSvg'     => 'plugins/indikator/paste/assets/images/paste-icon.svg',
                 'permissions' => ['indikator.paste.*'],
-                'order'       => 500,
+                'order'       => 80,
 
                 'sideMenu' => [
+                    'block' => [
+                        'label'       => 'indikator.paste::lang.menu.block',
+                        'url'         => Backend::url('indikator/paste/block'),
+                        'icon'        => 'icon-th-large',
+                        'permissions' => ['indikator.paste.block']
+                    ],
                     'text' => [
                         'label'       => 'indikator.paste::lang.menu.text',
                         'url'         => Backend::url('indikator/paste/text'),
@@ -48,9 +56,20 @@ class Plugin extends PluginBase
         ];
     }
 
+    public function registerComponents()
+    {
+        return [
+            'Indikator\Paste\Components\Blocks' => 'blocks'
+        ];
+    }
+
     public function registerPermissions()
     {
         return [
+            'indikator.paste.block' => [
+                'tab'   => 'indikator.paste::lang.plugin.name',
+                'label' => 'indikator.paste::lang.permission.block'
+            ],
             'indikator.paste.text' => [
                 'tab'   => 'indikator.paste::lang.plugin.name',
                 'label' => 'indikator.paste::lang.permission.text'
@@ -62,6 +81,25 @@ class Plugin extends PluginBase
         ];
     }
 
+    public function registerListColumnTypes()
+    {
+        return [
+            'paste_status' => function($value) {
+                $text = [
+                    1 => 'active',
+                    2 => 'inactive'
+                ];
+
+                $class = [
+                    1 => 'text-info',
+                    2 => 'text-danger'
+                ];
+
+                return '<span class="oc-icon-circle '.$class[$value].'">'.Lang::get('indikator.content::lang.form.status_'.$text[$value]).'</span>';
+            }
+        ];
+    }
+
     public function registerMarkupTags()
     {
         return [
@@ -70,10 +108,6 @@ class Plugin extends PluginBase
             ],
             'functions' => [
                 'paste' => function($filter = 'text', $param = 0) {
-                    if ($filter != 'text' && $filter != 'code') {
-                        return '';
-                    }
-
                     if ($filter == 'text') {
                         if (is_string($param) && Text::where(['code' => $param, 'status' => 1])->count() == 1) {
                             return Text::where('code', $param)->pluck('content');
@@ -83,8 +117,8 @@ class Plugin extends PluginBase
                         }
                     }
 
-                    else {
-                        if (is_string($code) && Code::where(['code' => $param, 'status' => 1])->count() == 1) {
+                    else if ($filter == 'code') {
+                        if (is_string($param) && Code::where(['code' => $param, 'status' => 1])->count() == 1) {
                             return Code::where('code', $param)->pluck('content');
                         }
                         else if (is_numeric($param) && Code::where(['id' => $param, 'status' => 1])->count() == 1) {

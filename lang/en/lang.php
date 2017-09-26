@@ -7,14 +7,20 @@ return [
         'author' => 'Gergő Szabó'
     ],
     'menu' => [
+        'block' => 'Block',
+        'category' => 'Category',
         'text' => 'Text',
         'code' => 'Code'
     ],
     'title' => [
+        'block' => 'block',
+        'category' => 'category',
         'text' => 'text',
         'code' => 'code'
     ],
     'new' => [
+        'block' => 'New block',
+        'category' => 'New category',
         'text' => 'New text',
         'code' => 'New code'
     ],
@@ -24,6 +30,20 @@ return [
         'name' => 'Name',
         'content' => 'Content',
         'common' => 'Common',
+        'none' => '-- none --',
+        'title' => 'Title',
+        'subtitle' => 'Subtitle',
+        'button' => 'Button',
+        'button_name' => 'Name',
+        'button_link' => 'Link to',
+        'button_class' => 'CSS class',
+        'button_position' => 'Position',
+        'pos_left' => 'left',
+        'pos_center' => 'center',
+        'pos_right' => 'right',
+        'image' => 'Image',
+        'category' => 'Category',
+        'sort_order' => 'Order',
         'type' => 'Type',
         'type_text' => 'Text',
         'type_image' => 'Image',
@@ -33,7 +53,7 @@ return [
         'type_css' => 'CSS',
         'status' => 'Status',
         'status_active' => 'Active',
-        'status_inactive' => 'Inactive',
+        'status_inactive' => 'Inactive'
     ],
     'list' => [
         'pieces' => 'pieces',
@@ -45,15 +65,32 @@ return [
         'deactivate' => 'Deactivate',
         'active' => 'Active',
         'inactive' => 'Inactive',
+        'show' => 'Show',
         'return' => 'Return'
+    ],
+    'popup' => [
+        '1step_title' => '1. step',
+        '1step_desc' => 'First of all, you must insert the Blocks front-end component into the default layout of the active theme.',
+        '2step_title' => '2. step',
+        '2step_desc' => 'Copy the following lines into the current CMS page:',
+        '2step_code' => 'Your HTML structure of block content',
+        '3step_title' => '3. step',
+        '3step_desc' => 'Use the following block parameters:',
+        'cms_pages' => 'For CMS Pages',
+        'content_section' => 'For content sections'
     ],
     'flash' => [
         'activate' => 'Successfully activated those items.',
         'deactivate' => 'Successfully deactivated those items.',
-        'delete' => 'Do you really want to delete this items?',
+        'delete' => 'Do you want to delete this items?',
         'remove' => 'Successfully removed those items.'
     ],
+    'component' => [
+        'block_name' => 'Blocks',
+        'block_description' => 'List of all active blocks.'
+    ],
     'permission' => [
+        'block' => 'Manage blocks',
         'text' => 'Manage texts',
         'code' => 'Manage codes'
     ]

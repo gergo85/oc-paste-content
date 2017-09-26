@@ -1,0 +1,25 @@
+# ===================================
+#  List Behavior Config
+# ===================================
+
+title: indikator.paste::lang.menu.block
+list: ~/plugins/indikator/paste/models/block/columns.yaml
+
+modelClass: Indikator\Paste\Models\Block
+recordUrl: indikator/paste/block/update/:id
+noRecordsMessage: backend::lang.list.no_records
+
+recordsPerPage: 15
+showCheckboxes: true
+showSetup: true
+
+defaultSort:
+    column: code
+    direction: asc
+
+toolbar:
+    buttons: list_toolbar
+    search:
+        prompt: backend::lang.list.search_prompt
+
+filter: config_filter.yaml

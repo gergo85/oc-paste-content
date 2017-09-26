@@ -1,0 +1,42 @@
+# ===================================
+#  Column Definitions
+# ===================================
+
+columns:
+
+    id:
+        label: indikator.paste::lang.form.id
+        invisible: true
+
+    code:
+        label: indikator.paste::lang.form.code
+        sortable: false
+        clickable: false
+        type: partial
+        path: ~/plugins/indikator/paste/models/block/_code.htm
+        cssClass: column-button
+        valueFrom: id
+
+    name:
+        label: indikator.paste::lang.form.name
+        searchable: true
+
+    sort_order:
+        label: indikator.paste::lang.form.sort_order
+        searchable: true
+
+    status:
+        label: indikator.paste::lang.form.status
+        sortable: false
+        type: paste_status
+
+    created_at:
+        label: indikator.paste::lang.list.created_at
+        searchable: true
+        invisible: true
+        type: datetime
+
+    updated_at:
+        label: indikator.paste::lang.list.updated_at
+        searchable: true
+        type: datetime

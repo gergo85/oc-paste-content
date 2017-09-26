@@ -1,0 +1,22 @@
+# ===================================
+#  Field Definitions
+# ===================================
+
+fields:
+
+    code:
+        label: indikator.paste::lang.form.code
+        required: true
+        span: auto
+
+    name:
+        label: indikator.paste::lang.form.name
+        span: auto
+
+secondaryTabs:
+    fields:
+
+        common:
+            label: indikator.paste::lang.form.common
+            type: textarea
+            size: small
