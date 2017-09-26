@@ -1,5 +1,5 @@
 # Paste Content plugin
-Use this plugin if you want to paste own predetermined HTML content (snippets) to the CMS or plugins.
+Use this plugin if you want to paste own predetermined simple content (snippets) or HTML blocks to the CMS or plugins.
 
 ## Advantages
 * __It works with build-in CMS__ (Pages, Partials and Layout).
@@ -36,7 +36,7 @@ ADVERTISEMENT HERE
 Name | Description
 ----------- | -----------
 First parameter | The type of content: _text_ or _code_
-Second parameter | The code of content (without brackets) or the ID of content
+Second parameter | The code of content or the ID of content
 
 ## Works with plugins
 ### Usage steps
@@ -55,7 +55,7 @@ __Blog post__
 
 Lorem ipsum dolor sit amet, nibh aute et sodales at arcu, urna libero, euismod pharetra vestibulum tristique praesent. Ligula integer natoque ut praesent sapien, ligula placerat nisl neque id commodi, quis dictum sit erat ante mollis nascetur.
 
-{{ads}}
+{{ ads }}
 
 __HTML code__
 ```
