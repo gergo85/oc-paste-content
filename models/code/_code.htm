@@ -1,3 +1,9 @@
-<?php
-
-echo '{{'.$record->code.'}}';
+<a
+    data-control="popup"
+    data-size="huge"
+    data-handler="onShowCode"
+    data-request-data="id:<?php echo $record->id; ?>,code:'<?php echo $record->code; ?>'"
+    href="javascript:;"
+    class="btn btn-default btn-sm">
+    <?= e(trans('indikator.paste::lang.button.show')) ?>
+</a>
