@@ -43,6 +43,7 @@ return [
         'pos_right' => 'right',
         'image' => 'Image',
         'category' => 'Category',
+        'color' => 'Color',
         'sort_order' => 'Order',
         'type' => 'Type',
         'type_text' => 'Text',
@@ -57,6 +58,7 @@ return [
     ],
     'list' => [
         'pieces' => 'pieces',
+        'information' => 'Information',
         'created_at' => 'Created at',
         'updated_at' => 'Updated at'
     ],
@@ -65,19 +67,22 @@ return [
         'deactivate' => 'Deactivate',
         'active' => 'Active',
         'inactive' => 'Inactive',
-        'show' => 'Show',
+        'stat' => 'Stat',
         'return' => 'Return'
     ],
     'popup' => [
         '1step_title' => '1. step',
-        '1step_desc' => 'First of all, you must insert the Blocks front-end component into the default layout of the active theme.',
+        '1step_desc' => 'First of all, you must insert the Blocks front-end component into the default layout in the CMS.',
         '2step_title' => '2. step',
         '2step_desc' => 'Copy the following lines into the current CMS page:',
         '2step_code' => 'Your HTML structure of block content',
+        '2step_comment' => 'You can use code instead of ID.',
         '3step_title' => '3. step',
         '3step_desc' => 'Use the following block parameters:',
         'cms_pages' => 'For CMS Pages',
-        'content_section' => 'For content sections'
+        'content_section' => 'For content sections',
+        'statistics' => 'Statistics',
+        'none' => 'none'
     ],
     'flash' => [
         'activate' => 'Successfully activated those items.',

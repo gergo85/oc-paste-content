@@ -1,9 +1,19 @@
 <a
     data-control="popup"
-    data-size="huge"
+    data-size="large"
     data-handler="onShowCode"
     data-request-data="id:<?php echo $record->id; ?>"
     href="javascript:;"
     class="btn btn-default btn-sm">
-    <?= e(trans('indikator.paste::lang.button.show')) ?>
+    <?= e(trans('indikator.paste::lang.form.code')) ?>
+</a>
+
+<a
+    data-control="popup"
+    data-size="small"
+    data-handler="onShowStat"
+    data-request-data="id:<?php echo $record->id; ?>,code:'<?php echo $record->code; ?>'"
+    href="javascript:;"
+    class="btn btn-default btn-sm">
+    <?= e(trans('indikator.paste::lang.button.stat')) ?>
 </a>

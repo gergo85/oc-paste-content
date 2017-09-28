@@ -5,6 +5,8 @@ use BackendMenu;
 use Indikator\Paste\Models\Block as Item;
 use Flash;
 use Lang;
+use File;
+use Cms\Classes\Theme;
 
 class Block extends Controller
 {
@@ -100,8 +102,8 @@ class Block extends Controller
     '.Lang::get('indikator.paste::lang.popup.2step_code').'
 
     {% endif %}
-{% endfor %}
-                    </pre>
+{% endfor %}</pre>
+                    '.Lang::get('indikator.paste::lang.popup.2step_comment').'
                 </div>
                 <div class="col-md-6">
                     <strong>'.Lang::get('indikator.paste::lang.popup.3step_title').'</strong><br>
@@ -113,9 +115,64 @@ class Block extends Controller
                     <strong>{{ item.button_link }}</strong> - '.Lang::get('indikator.paste::lang.form.button_link').'<br>
                     <strong>{{ item.button_class }}</strong> - '.Lang::get('indikator.paste::lang.form.button_class').'<br>
                     <strong>{{ item.button_position }}</strong> - '.Lang::get('indikator.paste::lang.form.button_position').'<br>
-                     <strong>{{ item.image|media }}</strong> - '.Lang::get('indikator.paste::lang.form.image').'
+                     <strong>{{ item.image|media }}</strong> - '.Lang::get('indikator.paste::lang.form.image').'<br>
+                    <strong>{{ item.color }}</strong> - '.Lang::get('indikator.paste::lang.form.color').'
                 </div>
                 <div class="clearfix"></div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="popup">'.Lang::get('backend::lang.form.close').'</button>
+            </div>
+        ';
+    }
+
+    public function onShowStat()
+    {
+        $types = ['pages', 'partials', 'layouts'];
+
+        foreach ($types as $type) {
+            $items[$type] = [];
+            $result[$type] = '';
+
+            $theme = Theme::getEditTheme()->getDirName();
+            $path = base_path().'/themes/'.$theme.'/'.$type;
+            $files = File::allFiles($path);
+
+            foreach ($files as $file) {
+                $content = File::get((string)$file);
+                
+                if (substr_count($content, 'item.id == '.post('id')) > 0 || substr_count($content, "item.id == '".post('code')."'") || substr_count($content, 'item.id == "'.post('code').'"') > 0) {
+                    if (!isset($items[$type][(string)$file])) {
+                        $items[$type][(string)$file] = true;
+                    }
+                }
+            }
+
+            natsort($items[$type]);
+
+            foreach ($items[$type] as $name => $count) {
+                $result[$type] .= str_replace($path.'/', '', $name).'<br>';
+            }
+
+            if ($result[$type] == '') {
+                $result[$type] = '<em>'.Lang::get('indikator.paste::lang.popup.none').'</em><br>';
+            }
+        }
+
+        return '
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="popup">×</button>
+                <h4 class="modal-title">'.Lang::get('indikator.paste::lang.popup.statistics').'</h4>
+            </div>
+            <div class="modal-body">
+                <strong>'.Lang::get('cms::lang.page.menu_label').'</strong><br>
+                '.$result['pages'].'
+                <br>
+                <strong>'.Lang::get('cms::lang.partial.menu_label').'</strong><br>
+                '.$result['partials'].'
+                <br>
+                <strong>'.Lang::get('cms::lang.layout.menu_label').'</strong><br>
+                '.$result['layouts'].'
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="popup">'.Lang::get('backend::lang.form.close').'</button>

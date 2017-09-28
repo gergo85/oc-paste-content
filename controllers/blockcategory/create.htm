@@ -1,5 +1,6 @@
 <?php Block::put('breadcrumb') ?>
     <ul>
+        <li><a href="<?= Backend::url('indikator/paste/block') ?>"><?= e(trans('indikator.paste::lang.menu.block')) ?></a></li>
         <li><a href="<?= Backend::url('indikator/paste/blockcategory') ?>"><?= e(trans('indikator.paste::lang.menu.category')) ?></a></li>
         <li><?= e(trans($this->pageTitle)) ?></li>
     </ul>
@@ -43,12 +44,7 @@
 
         <script type="text/javascript">
         setTimeout(function() {
-            if (document.getElementById('Form-field-Text-code')) {
-                document.getElementById('Form-field-Text-code').focus();
-            }
-            else {
-                document.getElementById('Form-field-Text-code-placeholderField').focus();
-            }
+            document.getElementById('Form-field-BlockCategory-code').focus();
         }, 300);
         </script>
 

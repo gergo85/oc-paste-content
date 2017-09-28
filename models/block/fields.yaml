@@ -68,6 +68,11 @@ secondaryTabs:
             label: indikator.paste::lang.form.category
             type: dropdown
 
+        color:
+            label: indikator.paste::lang.form.color
+            type: colorpicker
+            availableColors: [#bdc3c7, #7f8c8d, #34495e, #27ae60, #1e8e81, #3498db, #9b59b6, #f1c40f, #c0392b]
+
         status:
             label: indikator.paste::lang.form.status
             required: true
@@ -80,4 +85,5 @@ secondaryTabs:
 
         sort_order:
             label: indikator.paste::lang.form.sort_order
+            default: 1
             span: auto

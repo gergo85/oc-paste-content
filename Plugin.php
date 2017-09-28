@@ -30,7 +30,7 @@ class Plugin extends PluginBase
                 'icon'        => 'icon-clipboard',
                 'iconSvg'     => 'plugins/indikator/paste/assets/images/paste-icon.svg',
                 'permissions' => ['indikator.paste.*'],
-                'order'       => 80,
+                'order'       => 201,
 
                 'sideMenu' => [
                     'block' => [

@@ -2,8 +2,8 @@
 
 return [
     'plugin' => [
-        'name' => 'Tartalom típusok',
-        'description' => 'Tartalmak beszúrása lapokba, blog bejegyzésekbe. stb.',
+        'name' => 'Szekciók',
+        'description' => 'Különböző tartalom típusok beillesztése az oldalba.',
         'author' => 'Szabó Gergő'
     ],
     'menu' => [
@@ -43,6 +43,7 @@ return [
         'pos_right' => 'jobbra',
         'image' => 'Kép',
         'category' => 'Kategória',
+        'color' => 'Szín',
         'sort_order' => 'Sorrend',
         'type' => 'Típus',
         'type_text' => 'Szöveg',
@@ -57,6 +58,7 @@ return [
     ],
     'list' => [
         'pieces' => 'darab',
+        'information' => 'Információk',
         'created_at' => 'Létrehozva',
         'updated_at' => 'Módosítva'
     ],
@@ -65,19 +67,22 @@ return [
         'deactivate' => 'Deaktiválás',
         'active' => 'Aktív',
         'inactive' => 'Inaktív',
-        'show' => 'Mutat',
+        'stat' => 'Stat',
         'return' => 'Vissza'
     ],
     'popup' => [
         '1step_title' => '1. lépés',
-        '1step_desc' => 'Elsőként illessze be a Blokkok komponenst az alapértelmezett elrendezésbe.',
+        '1step_desc' => 'Elsőként illessze be a Blokkok komponenst az alapértelmezett elrendezésbe a Testreszabás menüben.',
         '2step_title' => '2. lépés',
         '2step_desc' => 'Másolja be az alábbi sorokat a megfelelő lapba:',
-        '2step_code' => 'Saját HTML elrendezés helye',
+        '2step_code' => 'Saját HTML kód helye',
+        '2step_comment' => 'Használhatja a kódot is az ID helyet.',
         '3step_title' => '3. lépés',
         '3step_desc' => 'Használja az alábbi paramétereket:',
-        'cms_pages' => 'Statikus lapokhoz',
-        'content_section' => 'Tartalmi részekhez'
+        'cms_pages' => 'Lapokhoz',
+        'content_section' => 'Szövegdobozhoz',
+        'statistics' => 'Statisztika',
+        'none' => 'nincs'
     ],
     'flash' => [
         'activate' => 'Az aktiválás sikeresen megtörtént.',

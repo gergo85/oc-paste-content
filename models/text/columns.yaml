@@ -8,15 +8,6 @@ columns:
         label: indikator.paste::lang.form.id
         invisible: true
 
-    code:
-        label: indikator.paste::lang.form.code
-        sortable: false
-        clickable: false
-        type: partial
-        path: ~/plugins/indikator/paste/models/text/_code.htm
-        cssClass: column-button
-        valueFrom: id
-
     type:
         label: indikator.paste::lang.form.type
         searchable: true
@@ -47,3 +38,12 @@ columns:
         label: indikator.paste::lang.list.updated_at
         searchable: true
         type: datetime
+
+    code:
+        label: indikator.paste::lang.list.information
+        sortable: false
+        clickable: false
+        type: partial
+        path: ~/plugins/indikator/paste/models/text/_code.htm
+        cssClass: column-button
+        valueFrom: id

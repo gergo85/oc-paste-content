@@ -8,15 +8,6 @@ columns:
         label: indikator.paste::lang.form.id
         invisible: true
 
-    code:
-        label: indikator.paste::lang.form.code
-        sortable: false
-        clickable: false
-        type: partial
-        path: ~/plugins/indikator/paste/models/blockcategory/_code.htm
-        cssClass: column-button
-        valueFrom: id
-
     name:
         label: indikator.paste::lang.form.name
         searchable: true
@@ -26,6 +17,11 @@ columns:
         searchable: true
         type: partial
         path: ~/plugins/indikator/paste/models/blockcategory/_items.htm
+
+    common:
+        label: indikator.paste::lang.form.common
+        searchable: true
+        invisible: true
 
     created_at:
         label: indikator.paste::lang.list.created_at
@@ -37,3 +33,12 @@ columns:
         label: indikator.paste::lang.list.updated_at
         searchable: true
         type: datetime
+
+    code:
+        label: indikator.paste::lang.list.information
+        sortable: false
+        clickable: false
+        type: partial
+        path: ~/plugins/indikator/paste/models/blockcategory/_code.htm
+        cssClass: column-button
+        valueFrom: id
