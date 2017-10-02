@@ -8,6 +8,10 @@ columns:
         label: indikator.paste::lang.form.id
         invisible: true
 
+    code:
+        label: indikator.paste::lang.form.code
+        invisible: true
+
     type:
         label: indikator.paste::lang.form.type
         searchable: true
@@ -39,7 +43,7 @@ columns:
         searchable: true
         type: datetime
 
-    code:
+    information:
         label: indikator.paste::lang.list.information
         sortable: false
         clickable: false

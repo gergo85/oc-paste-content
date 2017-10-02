@@ -1,0 +1,5 @@
+<?php
+
+if ($record->category > 0) {
+    echo \Indikator\Paste\Models\BlockCategory::where('id', $record->category)->pluck('name');
+}

@@ -8,6 +8,10 @@ columns:
         label: indikator.paste::lang.form.id
         invisible: true
 
+    code:
+        label: indikator.paste::lang.form.code
+        invisible: true
+
     name:
         label: indikator.paste::lang.form.name
         searchable: true
@@ -15,6 +19,13 @@ columns:
     sort_order:
         label: indikator.paste::lang.form.sort_order
         searchable: true
+
+    category:
+        label: indikator.paste::lang.form.category
+        invisible: true
+        sortable: false
+        type: partial
+        path: ~/plugins/indikator/paste/models/block/_category.htm
 
     status:
         label: indikator.paste::lang.form.status
@@ -32,7 +43,7 @@ columns:
         searchable: true
         type: datetime
 
-    code:
+    information:
         label: indikator.paste::lang.list.information
         sortable: false
         clickable: false
