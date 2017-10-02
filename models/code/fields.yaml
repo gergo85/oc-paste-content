@@ -4,13 +4,15 @@
 
 fields:
 
-    code:
-        label: indikator.paste::lang.form.code
+    name:
+        label: indikator.paste::lang.form.name
         required: true
         span: auto
 
-    name:
-        label: indikator.paste::lang.form.name
+    code:
+        label: indikator.paste::lang.form.code
+        required: true
+        preset: name
         span: auto
 
     content:

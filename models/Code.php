@@ -9,6 +9,7 @@ class Code extends Model
     protected $table = 'indikator_paste_code';
 
     public $rules = [
+        'name'   => 'required',
         'code'   => ['required', 'regex:/^[a-z0-9\/\:_\-\*\[\]\+\?\|]*$/i', 'unique:indikator_paste_code'],
         'type'   => 'required|between:1,3|numeric',
         'status' => 'required|between:1,2|numeric'

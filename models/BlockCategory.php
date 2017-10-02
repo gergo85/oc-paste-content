@@ -9,6 +9,7 @@ class BlockCategory extends Model
     protected $table = 'indikator_paste_block_category';
 
     public $rules = [
+        'name' => 'required',
         'code' => ['required', 'regex:/^[a-z0-9\/\:_\-\*\[\]\+\?\|]*$/i', 'unique:indikator_paste_block_category']
     ];
 }
