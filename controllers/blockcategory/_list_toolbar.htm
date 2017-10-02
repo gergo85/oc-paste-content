@@ -1,5 +1,10 @@
 <div data-control="toolbar">
     <a
+        href="<?= Backend::url('indikator/paste/block') ?>"
+        class="btn btn-default oc-icon-chevron-left">
+        <?= e(trans('indikator.paste::lang.button.return')) ?>
+    </a>
+    <a
         href="<?= Backend::url('indikator/paste/blockcategory/create') ?>"
         class="btn btn-primary oc-icon-plus">
         <?= e(trans('indikator.paste::lang.new.category')) ?>
