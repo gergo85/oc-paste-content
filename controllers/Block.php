@@ -103,20 +103,31 @@ class Block extends Controller
 
     {% endif %}
 {% endfor %}</pre>
-                    '.Lang::get('indikator.paste::lang.popup.2step_comment').'
+                    <em>'.Lang::get('backend::lang.form.or').'</em>
+                    <pre>
+{% for item in blocks %}
+    {% if item.code == \''.post('code').'\' %}
+    
+    '.Lang::get('indikator.paste::lang.popup.2step_code').'
+
+    {% endif %}
+{% endfor %}</pre>
                 </div>
                 <div class="col-md-6">
                     <strong>'.Lang::get('indikator.paste::lang.popup.3step_title').'</strong><br>
                     '.Lang::get('indikator.paste::lang.popup.3step_desc').'<br><br>
                     <strong>{{ item.title }}</strong> - '.Lang::get('indikator.paste::lang.form.title').'<br>
                     <strong>{{ item.subtitle }}</strong> - '.Lang::get('indikator.paste::lang.form.subtitle').'<br>
-                    <strong>{{ item.content|raw }}</strong> - '.Lang::get('indikator.paste::lang.form.content').'<br>
+                    <strong>{{ item.content|raw }}</strong> - '.Lang::get('indikator.paste::lang.form.content').'<br><br>
                     <strong>{{ item.button_name }}</strong> - '.Lang::get('indikator.paste::lang.form.button_name').'<br>
                     <strong>{{ item.button_link }}</strong> - '.Lang::get('indikator.paste::lang.form.button_link').'<br>
                     <strong>{{ item.button_class }}</strong> - '.Lang::get('indikator.paste::lang.form.button_class').'<br>
-                    <strong>{{ item.button_position }}</strong> - '.Lang::get('indikator.paste::lang.form.button_position').'<br>
+                    <strong>{{ item.button_position }}</strong> - '.Lang::get('indikator.paste::lang.form.button_position').'<br><br>
                      <strong>{{ item.image|media }}</strong> - '.Lang::get('indikator.paste::lang.form.image').'<br>
-                    <strong>{{ item.color }}</strong> - '.Lang::get('indikator.paste::lang.form.color').'
+                    <strong>{{ item.color }}</strong> - '.Lang::get('indikator.paste::lang.form.color').'<br>
+                    <strong>{{ item.sort_order }}</strong> - '.Lang::get('indikator.paste::lang.form.sort_order').'<br><br>
+                    <strong>{{ item.code }}</strong> - '.Lang::get('indikator.paste::lang.form.code').'<br>
+                    <strong>{{ item.id }}</strong> - '.Lang::get('indikator.paste::lang.form.id').'
                 </div>
                 <div class="clearfix"></div>
             </div>

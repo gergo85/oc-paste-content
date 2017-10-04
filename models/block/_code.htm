@@ -2,12 +2,12 @@
     data-control="popup"
     data-size="large"
     data-handler="onShowCode"
-    data-request-data="id:<?php echo $record->id; ?>"
+    data-request-data="id:<?php echo $record->id; ?>,code:'<?php echo $record->code; ?>'"
     href="javascript:;"
     class="btn btn-default btn-sm">
     <?= e(trans('indikator.paste::lang.form.code')) ?>
 </a>
-
+&nbsp;
 <a
     data-control="popup"
     data-size="small"

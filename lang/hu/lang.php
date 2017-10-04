@@ -76,12 +76,12 @@ return [
         '2step_title' => '2. lépés',
         '2step_desc' => 'Másolja be az alábbi sorokat a megfelelő lapba:',
         '2step_code' => 'Saját HTML kód helye',
-        '2step_comment' => 'Használhatja a kódot is az ID helyet.',
         '3step_title' => '3. lépés',
         '3step_desc' => 'Használja az alábbi paramétereket:',
         'cms_pages' => 'Lapokhoz',
         'content_section' => 'Szövegdobozhoz',
         'statistics' => 'Statisztika',
+        'blocks' => 'Blokkok',
         'none' => 'nincs'
     ],
     'flash' => [

@@ -2,6 +2,7 @@
 
 use Backend\Classes\Controller;
 use BackendMenu;
+use Indikator\Paste\Models\Block;
 use Indikator\Paste\Models\BlockCategory as Item;
 use Flash;
 use Lang;
@@ -73,20 +74,22 @@ class BlockCategory extends Controller
 
     {% endif %}
 {% endfor %}</pre>
-                    '.Lang::get('indikator.paste::lang.popup.2step_comment').'
                 </div>
                 <div class="col-md-6">
                     <strong>'.Lang::get('indikator.paste::lang.popup.3step_title').'</strong><br>
                     '.Lang::get('indikator.paste::lang.popup.3step_desc').'<br><br>
                     <strong>{{ item.title }}</strong> - '.Lang::get('indikator.paste::lang.form.title').'<br>
                     <strong>{{ item.subtitle }}</strong> - '.Lang::get('indikator.paste::lang.form.subtitle').'<br>
-                    <strong>{{ item.content|raw }}</strong> - '.Lang::get('indikator.paste::lang.form.content').'<br>
+                    <strong>{{ item.content|raw }}</strong> - '.Lang::get('indikator.paste::lang.form.content').'<br><br>
                     <strong>{{ item.button_name }}</strong> - '.Lang::get('indikator.paste::lang.form.button_name').'<br>
                     <strong>{{ item.button_link }}</strong> - '.Lang::get('indikator.paste::lang.form.button_link').'<br>
                     <strong>{{ item.button_class }}</strong> - '.Lang::get('indikator.paste::lang.form.button_class').'<br>
-                    <strong>{{ item.button_position }}</strong> - '.Lang::get('indikator.paste::lang.form.button_position').'<br>
+                    <strong>{{ item.button_position }}</strong> - '.Lang::get('indikator.paste::lang.form.button_position').'<br><br>
                      <strong>{{ item.image|media }}</strong> - '.Lang::get('indikator.paste::lang.form.image').'<br>
-                    <strong>{{ item.color }}</strong> - '.Lang::get('indikator.paste::lang.form.color').'
+                    <strong>{{ item.color }}</strong> - '.Lang::get('indikator.paste::lang.form.color').'<br>
+                    <strong>{{ item.sort_order }}</strong> - '.Lang::get('indikator.paste::lang.form.sort_order').'<br><br>
+                    <strong>{{ item.code }}</strong> - '.Lang::get('indikator.paste::lang.form.code').'<br>
+                    <strong>{{ item.id }}</strong> - '.Lang::get('indikator.paste::lang.form.id').'
                 </div>
                 <div class="clearfix"></div>
             </div>
@@ -129,20 +132,38 @@ class BlockCategory extends Controller
             }
         }
 
+        $result['blocks'] = '';
+        $items = Block::where('category', post('id'))->orderBy('sort_order', 'asc')->get();
+
+        foreach ($items as $item) {
+            $result['blocks'] .= $item->name.'<br>';     
+        }
+
+        if ($result['blocks'] == '') {
+            $result['blocks'] = '<em>'.Lang::get('indikator.paste::lang.popup.none').'</em><br>';
+        }
+
         return '
             <div class="modal-header">
                 <button type="button" class="close" data-dismiss="popup">×</button>
                 <h4 class="modal-title">'.Lang::get('indikator.paste::lang.popup.statistics').'</h4>
             </div>
             <div class="modal-body">
-                <strong>'.Lang::get('cms::lang.page.menu_label').'</strong><br>
-                '.$result['pages'].'
-                <br>
-                <strong>'.Lang::get('cms::lang.partial.menu_label').'</strong><br>
-                '.$result['partials'].'
-                <br>
-                <strong>'.Lang::get('cms::lang.layout.menu_label').'</strong><br>
-                '.$result['layouts'].'
+                <div class="col-md-6">
+                    <strong>'.Lang::get('cms::lang.page.menu_label').'</strong><br>
+                    '.$result['pages'].'
+                    <br>
+                    <strong>'.Lang::get('cms::lang.partial.menu_label').'</strong><br>
+                    '.$result['partials'].'
+                    <br>
+                    <strong>'.Lang::get('cms::lang.layout.menu_label').'</strong><br>
+                    '.$result['layouts'].'
+                </div>
+                <div class="col-md-6">
+                    <strong>'.Lang::get('indikator.paste::lang.popup.blocks').'</strong><br>
+                    '.$result['blocks'].'
+                </div>
+                <div class="clearfix"></div>
             </div>
             <div class="modal-footer">
                 <button type="button" class="btn btn-default" data-dismiss="popup">'.Lang::get('backend::lang.form.close').'</button>

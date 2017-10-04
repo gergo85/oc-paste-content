@@ -76,12 +76,12 @@ return [
         '2step_title' => '2. step',
         '2step_desc' => 'Copy the following lines into the current CMS page:',
         '2step_code' => 'Your HTML structure of block content',
-        '2step_comment' => 'You can use code instead of ID.',
         '3step_title' => '3. step',
         '3step_desc' => 'Use the following block parameters:',
         'cms_pages' => 'For CMS Pages',
         'content_section' => 'For content sections',
         'statistics' => 'Statistics',
+        'blocks' => 'Blocks',
         'none' => 'none'
     ],
     'flash' => [
