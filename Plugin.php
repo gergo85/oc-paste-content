@@ -174,9 +174,11 @@ class Plugin extends PluginBase
 
     public function boot()
     {
-        RichEditor::extend(function($widget) {
-            $widget->addJs('/indikator/paste/list.js');
-            $widget->addJs('/plugins/indikator/paste/assets/js/froala.paste.plugin.js');
-        });
+        if (Text::count() + Code::count() > 0) {
+            RichEditor::extend(function($widget) {
+                $widget->addJs('/indikator/paste/list.js');
+                $widget->addJs('/plugins/indikator/paste/assets/js/froala.paste.plugin.js');
+            });
+        }
     }
 }
