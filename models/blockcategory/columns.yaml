@@ -18,7 +18,7 @@ columns:
 
     items:
         label: indikator.paste::lang.title.block
-        searchable: true
+        sortable: false
         type: partial
         path: ~/plugins/indikator/paste/models/blockcategory/_items.htm
 
