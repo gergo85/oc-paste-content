@@ -9,6 +9,8 @@ class UpdateTimestampsNullable extends Migration
     {
         DbDongle::disableStrictMode();
 
+        DbDongle::convertTimestamps('indikator_paste_block');
+        DbDongle::convertTimestamps('indikator_paste_block_category');
         DbDongle::convertTimestamps('indikator_paste_text');
         DbDongle::convertTimestamps('indikator_paste_code');
     }
