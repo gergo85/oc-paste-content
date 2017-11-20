@@ -23,3 +23,4 @@
     - Improved the Code and Stat popups.
     - change_columns_type.php
     - update_timestamp_nullable.php
+1.2.4: Added navigation links to the forms.

@@ -68,6 +68,8 @@ return [
         'active' => 'Aktív',
         'inactive' => 'Inaktív',
         'stat' => 'Stat',
+        'previous' => 'Előző',
+        'next' => 'Következő',
         'return' => 'Vissza'
     ],
     'popup' => [

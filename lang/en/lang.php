@@ -68,6 +68,8 @@ return [
         'active' => 'Active',
         'inactive' => 'Inactive',
         'stat' => 'Stat',
+        'previous' => 'Previous',
+        'next' => 'Next',
         'return' => 'Return'
     ],
     'popup' => [
