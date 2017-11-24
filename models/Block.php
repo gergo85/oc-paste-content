@@ -17,7 +17,7 @@ class Block extends Model
     public function getCategoryOptions()
     {
         $result = [0 => 'indikator.paste::lang.form.none'];
-        $items = BlockCategory::orderBy('name', 'asc')->get();
+        $items = BlockCategory::orderBy('name', 'asc')->get()->all();
 
         foreach ($items as $item) {
             $result[$item->id] = $item->name;

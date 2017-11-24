@@ -15,6 +15,6 @@ class Blocks extends ComponentBase
 
     public function onRun()
     {
-        $this->page['blocks'] = Block::where('status', 1)->orderBy('sort_order', 'asc')->get();
+        $this->page['blocks'] = Block::where('status', 1)->orderBy('sort_order', 'asc')->get()->all();
     }
 }

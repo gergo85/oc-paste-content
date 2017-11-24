@@ -110,19 +110,19 @@ class Plugin extends PluginBase
                 'paste' => function($filter = 'text', $param = 0) {
                     if ($filter == 'text') {
                         if (is_string($param) && Text::where(['code' => $param, 'status' => 1])->count() == 1) {
-                            return Text::where('code', $param)->pluck('content');
+                            return Text::where('code', $param)->value('content');
                         }
                         else if (is_numeric($param) && Text::where(['id' => $param, 'status' => 1])->count() == 1) {
-                            return Text::where('id', $param)->pluck('content');
+                            return Text::where('id', $param)->value('content');
                         }
                     }
 
                     else if ($filter == 'code') {
                         if (is_string($param) && Code::where(['code' => $param, 'status' => 1])->count() == 1) {
-                            return Code::where('code', $param)->pluck('content');
+                            return Code::where('code', $param)->value('content');
                         }
                         else if (is_numeric($param) && Code::where(['id' => $param, 'status' => 1])->count() == 1) {
-                            return Code::where('id', $param)->pluck('content');
+                            return Code::where('id', $param)->value('content');
                         }
                     }
 
