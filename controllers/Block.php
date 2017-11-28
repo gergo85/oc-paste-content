@@ -11,8 +11,8 @@ use Cms\Classes\Theme;
 class Block extends Controller
 {
     public $implement = [
-        'Backend.Behaviors.FormController',
-        'Backend.Behaviors.ListController'
+        \Backend\Behaviors\FormController::class,
+        \Backend\Behaviors\ListController::class
     ];
 
     public $formConfig = 'config_form.yaml';
@@ -98,7 +98,7 @@ class Block extends Controller
                     <pre>
 {% for item in blocks %}
     {% if item.id == '.post('id').' %}
-    
+
     '.Lang::get('indikator.paste::lang.popup.2step_code').'
 
     {% endif %}
@@ -107,7 +107,7 @@ class Block extends Controller
                     <pre>
 {% for item in blocks %}
     {% if item.code == \''.post('code').'\' %}
-    
+
     '.Lang::get('indikator.paste::lang.popup.2step_code').'
 
     {% endif %}
@@ -151,7 +151,7 @@ class Block extends Controller
 
             foreach ($files as $file) {
                 $content = File::get((string)$file);
-                
+
                 if (substr_count($content, 'item.id == '.post('id')) > 0 || substr_count($content, "item.id == '".post('code')."'") || substr_count($content, 'item.id == "'.post('code').'"') > 0) {
                     if (!isset($items[$type][(string)$file])) {
                         $items[$type][(string)$file] = true;

@@ -12,8 +12,8 @@ use Cms\Classes\Theme;
 class BlockCategory extends Controller
 {
     public $implement = [
-        'Backend.Behaviors.FormController',
-        'Backend.Behaviors.ListController'
+        \Backend\Behaviors\FormController::class,
+        \Backend\Behaviors\ListController::class
     ];
 
     public $formConfig = 'config_form.yaml';
@@ -69,7 +69,7 @@ class BlockCategory extends Controller
                     <pre>
 {% for item in blocks %}
     {% if item.category == '.post('id').' %}
-    
+
     '.Lang::get('indikator.paste::lang.popup.2step_code').'
 
     {% endif %}
@@ -113,7 +113,7 @@ class BlockCategory extends Controller
 
             foreach ($files as $file) {
                 $content = File::get((string)$file);
-                
+
                 if (substr_count($content, 'item.category == '.post('id')) > 0 || substr_count($content, "item.category == '".post('code')."'") || substr_count($content, 'item.category == "'.post('code').'"') > 0) {
                     if (!isset($items[$type][(string)$file])) {
                         $items[$type][(string)$file] = true;
@@ -136,7 +136,7 @@ class BlockCategory extends Controller
         $items = Block::where('category', post('id'))->orderBy('sort_order', 'asc')->get();
 
         foreach ($items as $item) {
-            $result['blocks'] .= $item->name.'<br>';     
+            $result['blocks'] .= $item->name.'<br>';
         }
 
         if ($result['blocks'] == '') {
