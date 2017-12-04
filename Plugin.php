@@ -68,15 +68,21 @@ class Plugin extends PluginBase
         return [
             'indikator.paste.block' => [
                 'tab'   => 'indikator.paste::lang.plugin.name',
-                'label' => 'indikator.paste::lang.permission.block'
+                'label' => 'indikator.paste::lang.permission.block',
+                'order' => 100,
+                'roles' => ['publisher']
             ],
             'indikator.paste.text' => [
                 'tab'   => 'indikator.paste::lang.plugin.name',
-                'label' => 'indikator.paste::lang.permission.text'
+                'label' => 'indikator.paste::lang.permission.text',
+                'order' => 200,
+                'roles' => ['publisher']
             ],
             'indikator.paste.code' => [
                 'tab'   => 'indikator.paste::lang.plugin.name',
-                'label' => 'indikator.paste::lang.permission.code'
+                'label' => 'indikator.paste::lang.permission.code',
+                'order' => 300,
+                'roles' => ['publisher']
             ]
         ];
     }
