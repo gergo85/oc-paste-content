@@ -2,8 +2,8 @@
 
 use Backend\Classes\Controller;
 use BackendMenu;
-use Indikator\Paste\Models\Block;
 use Indikator\Paste\Models\BlockCategory as Item;
+use Indikator\Paste\Models\Block;
 use Flash;
 use Lang;
 use File;
@@ -40,9 +40,7 @@ class BlockCategory extends Controller
 
                 $item->delete();
 
-                \Indikator\Paste\Models\Block::where('category', $itemId)->update([
-                    'category' => 0
-                ]);
+                Block::where('category', $itemId)->update(['category' => 0]);
             }
 
             Flash::success(Lang::get('indikator.content::lang.flash.remove'));
