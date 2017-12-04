@@ -65,12 +65,6 @@ $next     = \Indikator\Paste\Models\BlockCategory::where('id', '>', $uri[5])->mi
                     title="<?= e(trans('indikator.content::lang.button.previous')) ?>">
                 </a>
                 <?php endif ?>
-                <button
-                    class="oc-icon-trash-o btn-icon danger pull-right"
-                    data-request="onDelete"
-                    data-load-indicator="<?= e(trans('backend::lang.form.deleting_name', ['name'=>$formRecordName])) ?>"
-                    data-request-confirm="<?= e(trans('indikator.paste::lang.flash.delete')) ?>">
-                </button>
             </div>
         </div>
 
