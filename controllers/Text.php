@@ -87,9 +87,9 @@ class Text extends Controller
             </div>
             <div class="modal-body">
                 <strong>'.Lang::get('indikator.paste::lang.popup.cms_pages').'</strong>
-                <pre>{{ paste(\'code\', \''.post('id').'\') }}</pre>
+                <pre>{{ paste(\'text\', \''.post('id').'\') }}</pre>
                 <em>'.Lang::get('backend::lang.form.or').'</em>
-                <pre>{{ paste(\'code\', \''.post('code').'\') }}</pre>
+                <pre>{{ paste(\'text\', \''.post('code').'\') }}</pre>
                 <br>
                 <strong>'.Lang::get('indikator.paste::lang.popup.content_section').'</strong>
                 <pre>{{ '.post('code').' }}</pre>
