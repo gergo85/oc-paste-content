@@ -80,23 +80,9 @@ class Text extends Controller
 
     public function onShowCode()
     {
-        return '
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="popup">×</button>
-                <h4 class="modal-title">'.Lang::get('indikator.paste::lang.form.code').'</h4>
-            </div>
-            <div class="modal-body">
-                <strong>'.Lang::get('indikator.paste::lang.popup.cms_pages').'</strong>
-                <pre>{{ paste(\'text\', \''.post('id').'\') }}</pre>
-                <em>'.Lang::get('backend::lang.form.or').'</em>
-                <pre>{{ paste(\'text\', \''.post('code').'\') }}</pre>
-                <br>
-                <strong>'.Lang::get('indikator.paste::lang.popup.content_section').'</strong>
-                <pre>{{ '.post('code').' }}</pre>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="popup">'.Lang::get('backend::lang.form.close').'</button>
-            </div>
-        ';
+        $this->vars['id']   = post('id');
+        $this->vars['code'] = post('code');
+
+        return $this->makePartial('show_code');
     }
 }

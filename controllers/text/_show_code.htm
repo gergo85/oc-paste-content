@@ -1,0 +1,16 @@
+<div class="modal-header">
+    <button type="button" class="close" data-dismiss="popup">×</button>
+    <h4 class="modal-title"><?= e(trans('indikator.paste::lang.form.code')) ?></h4>
+</div>
+<div class="modal-body">
+    <strong><?= e(trans('indikator.paste::lang.popup.cms_pages')) ?></strong>
+    <pre>{{ paste('text', <?= $id ?>) }}</pre>
+    <em><?= e(trans('backend::lang.form.or')) ?></em>
+    <pre>{{ paste('text', '<?= $code ?>') }}</pre>
+    <br>
+    <strong><?= e(trans('indikator.paste::lang.popup.content_section')) ?></strong>
+    <pre>{{ <?= $code ?> }}</pre>
+</div>
+<div class="modal-footer">
+    <button type="button" class="btn btn-default" data-dismiss="popup"><?= e(trans('backend::lang.form.close')) ?></button>
+</div>
