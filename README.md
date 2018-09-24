@@ -4,6 +4,7 @@ Use this plugin if you want to paste own predetermined simple content (snippets)
 ## Advantages
 * __It works with build-in CMS__ (Pages, Partials and Layout).
 * __It works with any plugins__ ([News & Newsletter](http://octobercms.com/plugin/indikator-news), [Content Plus](http://octobercms.com/plugin/indikator-content), etc.).
+* __Support multilanguage content__ Works with [Rainlab Translate](http://octobercms.com/plugin/rainlab-translate) plugin.
 * __Easy to paste snippets__ with the build-in WYSIWYG editor.
 
 ## Works with CMS
