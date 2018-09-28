@@ -3,6 +3,7 @@
 use System\Classes\PluginBase;
 use Backend;
 use Lang;
+use App;
 use Indikator\Paste\Models\Text;
 use Indikator\Paste\Models\Code;
 use Indikator\Paste\Models\Block;
@@ -180,7 +181,7 @@ class Plugin extends PluginBase
 
     public function boot()
     {
-        if (Text::count() + Code::count() > 0) {
+        if (App::hasDatabase() && \Schema::hasTable('indikator_paste_text') && Text::count() + Code::count() > 0) {
             RichEditor::extend(function($widget) {
                 $widget->addJs('/indikator/paste/list.js');
                 $widget->addJs('/plugins/indikator/paste/assets/js/froala.paste.plugin.js');
