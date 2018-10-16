@@ -31,16 +31,9 @@ class Block extends Controller
 
     public function onActivate()
     {
-        if (($checkedIds = post('checked')) && is_array($checkedIds) && count($checkedIds)) {
-            foreach ($checkedIds as $itemId) {
-                if (!$item = Item::where('status', 2)->whereId($itemId)) {
-                    continue;
-                }
-
-                $item->update(['status' => 1]);
-            }
-
-            Flash::success(Lang::get('indikator.paste::lang.flash.activate'));
+        if ($this->isSelected()) {
+            $this->changeStatus(post('checked'), 2, 1);
+            $this->setMessage('activate');
         }
 
         return $this->listRefresh();
@@ -48,16 +41,9 @@ class Block extends Controller
 
     public function onDeactivate()
     {
-        if (($checkedIds = post('checked')) && is_array($checkedIds) && count($checkedIds)) {
-            foreach ($checkedIds as $itemId) {
-                if (!$item = Item::where('status', 1)->whereId($itemId)) {
-                    continue;
-                }
-
-                $item->update(['status' => 2]);
-            }
-
-            Flash::success(Lang::get('indikator.paste::lang.flash.deactivate'));
+        if ($this->isSelected()) {
+            $this->changeStatus(post('checked'), 1, 2);
+            $this->setMessage('deactivate');
         }
 
         return $this->listRefresh();
@@ -65,8 +51,8 @@ class Block extends Controller
 
     public function onRemove()
     {
-        if (($checkedIds = post('checked')) && is_array($checkedIds) && count($checkedIds)) {
-            foreach ($checkedIds as $itemId) {
+        if ($this->isSelected()) {
+            foreach (post('checked') as $itemId) {
                 if (!$item = Item::whereId($itemId)) {
                     continue;
                 }
@@ -74,10 +60,42 @@ class Block extends Controller
                 $item->delete();
             }
 
-            Flash::success(Lang::get('indikator.paste::lang.flash.remove'));
+            $this->setMessage('remove');
         }
 
         return $this->listRefresh();
+    }
+
+    /**
+     * @return bool
+     */
+    private function isSelected()
+    {
+        return ($checkedIds = post('checked')) && is_array($checkedIds) && count($checkedIds);
+    }
+
+    /**
+     * @param $action
+     */
+    private function setMessage($action)
+    {
+        Flash::success(Lang::get('indikator.paste::lang.flash.'.$action));
+    }
+
+    /**
+     * @param $post
+     * @param $from
+     * @param $to
+     */
+    private function changeStatus($post, $from, $to)
+    {
+        foreach ($post as $itemId) {
+            if (!$item = Item::where('status', $from)->whereId($itemId)) {
+                continue;
+            }
+
+            $item->update(['status' => $to]);
+        }
     }
 
     public function onShowCode()
