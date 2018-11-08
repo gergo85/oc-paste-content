@@ -7,6 +7,8 @@ fields:
     name:
         label: indikator.paste::lang.form.name
         required: true
+        attributes:
+           autofocus: ''
         span: auto
 
     code:
@@ -28,7 +30,7 @@ tabs:
 
         content:
             tab: indikator.paste::lang.form.content
-            label: 
+            label:
             type: richeditor
             size: huge
 
