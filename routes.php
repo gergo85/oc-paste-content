@@ -23,4 +23,5 @@ Route::get('/indikator/paste/list.js', function()
     }
 
     return '$.oc.paste = ['.substr($paste, 1).']';
-});
+
+})->middleware('web');
