@@ -22,8 +22,8 @@ columns:
         label: indikator.paste::lang.form.name
         searchable: true
 
-    common:
-        label: indikator.paste::lang.form.common
+    comment:
+        label: indikator.paste::lang.form.comment
         searchable: true
         invisible: true
 

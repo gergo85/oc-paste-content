@@ -29,7 +29,7 @@ return [
         'code' => 'Code',
         'name' => 'Name',
         'content' => 'Content',
-        'common' => 'Common',
+        'comment' => 'Comment',
         'none' => '-- none --',
         'title' => 'Title',
         'subtitle' => 'Subtitle',

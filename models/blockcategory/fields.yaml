@@ -9,18 +9,23 @@ fields:
         required: true
         attributes:
            autofocus: ''
-        span: auto
+        span: storm
+        cssClass: col-lg-6
 
     code:
         label: indikator.paste::lang.form.code
         required: true
         preset: name
-        span: auto
+        span: storm
+        cssClass: col-lg-6
 
 secondaryTabs:
+
     fields:
 
-        common:
-            label: indikator.paste::lang.form.common
+        comment:
+            label: indikator.paste::lang.form.comment
             type: textarea
             size: small
+            span: storm
+            cssClass: col-xs-12

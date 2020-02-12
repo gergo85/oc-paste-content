@@ -9,26 +9,32 @@ fields:
         required: true
         attributes:
            autofocus: ''
-        span: auto
+        span: storm
+        cssClass: col-lg-6
 
     code:
         label: indikator.paste::lang.form.code
         required: true
         preset: name
-        span: auto
+        span: storm
+        cssClass: col-lg-6
 
     content:
         label: indikator.paste::lang.form.content
         type: richeditor
-        size: huge
+        span: storm
+        cssClass: col-xs-12
 
 secondaryTabs:
+
     fields:
 
-        common:
-            label: indikator.paste::lang.form.common
+        comment:
+            label: indikator.paste::lang.form.comment
             type: textarea
             size: small
+            span: storm
+            cssClass: col-xs-12
 
         type:
             label: indikator.paste::lang.form.type
@@ -39,6 +45,8 @@ secondaryTabs:
                 2: indikator.paste::lang.form.type_image
                 3: indikator.paste::lang.form.type_mixed
             default: 1
+            span: storm
+            cssClass: col-xs-6
 
         status:
             label: indikator.paste::lang.form.status
@@ -48,3 +56,5 @@ secondaryTabs:
                 1: indikator.paste::lang.form.status_active
                 2: indikator.paste::lang.form.status_inactive
             default: 1
+            span: storm
+            cssClass: col-xs-6

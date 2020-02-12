@@ -29,7 +29,7 @@ return [
         'code' => 'Kód',
         'name' => 'Név',
         'content' => 'Tartalom',
-        'common' => 'Megjegyzés',
+        'comment' => 'Megjegyzés',
         'none' => '-- nincs --',
         'title' => 'Cím',
         'subtitle' => 'Alcím',

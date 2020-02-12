@@ -22,8 +22,8 @@ columns:
         type: partial
         path: ~/plugins/indikator/paste/models/blockcategory/_items.htm
 
-    common:
-        label: indikator.paste::lang.form.common
+    comment:
+        label: indikator.paste::lang.form.comment
         searchable: true
         invisible: true
 

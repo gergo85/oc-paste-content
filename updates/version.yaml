@@ -29,3 +29,7 @@
     - Added multilanguage support.
     - Minor code improvements.
 1.2.7: Updated the main navigation icon.
+1.2.8:
+    - Minor UI and database improvements.
+    - rename_common_fields.php
+    - change_varchar_length.php

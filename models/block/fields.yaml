@@ -9,23 +9,33 @@ fields:
         required: true
         attributes:
            autofocus: ''
-        span: auto
+        span: storm
+        cssClass: col-lg-6
 
     code:
         label: indikator.paste::lang.form.code
         required: true
         preset: name
-        span: auto
+        span: storm
+        cssClass: col-lg-6
 
     title:
         label: indikator.paste::lang.form.title
-        span: auto
+        span: storm
+        cssClass: col-lg-6
 
     subtitle:
         label: indikator.paste::lang.form.subtitle
-        span: auto
+        span: storm
+        cssClass: col-lg-6
 
 tabs:
+
+    icons:
+
+        indikator.paste::lang.form.content: icon-file-text-o
+        indikator.paste::lang.form.button: icon-hand-pointer-o
+
     fields:
 
         content:
@@ -33,21 +43,26 @@ tabs:
             label:
             type: richeditor
             size: huge
+            span: storm
+            cssClass: col-xs-12
 
         button_name:
             tab: indikator.paste::lang.form.button
             label: indikator.paste::lang.form.button_name
-            span: auto
+            span: storm
+            cssClass: col-lg-6
 
         button_link:
             tab: indikator.paste::lang.form.button
             label: indikator.paste::lang.form.button_link
-            span: auto
+            span: storm
+            cssClass: col-lg-6
 
         button_class:
             tab: indikator.paste::lang.form.button
             label: indikator.paste::lang.form.button_class
-            span: auto
+            span: storm
+            cssClass: col-lg-6
 
         button_position:
             tab: indikator.paste::lang.form.button
@@ -58,24 +73,32 @@ tabs:
                 center: indikator.paste::lang.form.pos_center
                 right: indikator.paste::lang.form.pos_right
             default: 1
-            span: auto
+            span: storm
+            cssClass: col-lg-6
 
 secondaryTabs:
+
     fields:
 
         image:
             label: indikator.paste::lang.form.image
             type: mediafinder
             mode: image
+            span: storm
+            cssClass: col-xs-12
 
         category:
             label: indikator.paste::lang.form.category
             type: dropdown
+            span: storm
+            cssClass: col-xs-12
 
         color:
             label: indikator.paste::lang.form.color
             type: colorpicker
             availableColors: [#bdc3c7, #7f8c8d, #34495e, #27ae60, #1e8e81, #3498db, #9b59b6, #f1c40f, #c0392b]
+            span: storm
+            cssClass: col-xs-12
 
         status:
             label: indikator.paste::lang.form.status
@@ -85,9 +108,11 @@ secondaryTabs:
                 1: indikator.paste::lang.form.status_active
                 2: indikator.paste::lang.form.status_inactive
             default: 1
-            span: auto
+            span: storm
+            cssClass: col-xs-6
 
         sort_order:
             label: indikator.paste::lang.form.sort_order
             default: 1
-            span: auto
+            span: storm
+            cssClass: col-xs-6
