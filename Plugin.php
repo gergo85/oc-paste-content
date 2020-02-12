@@ -31,26 +31,29 @@ class Plugin extends PluginBase
                 'icon'        => 'icon-clipboard',
                 'iconSvg'     => 'plugins/indikator/paste/assets/images/paste-icon.svg',
                 'permissions' => ['indikator.paste.*'],
-                'order'       => 201,
+                'order'       => 500,
 
                 'sideMenu' => [
                     'block' => [
                         'label'       => 'indikator.paste::lang.menu.block',
                         'url'         => Backend::url('indikator/paste/block'),
                         'icon'        => 'icon-th-large',
-                        'permissions' => ['indikator.paste.block']
+                        'permissions' => ['indikator.paste.block'],
+                        'order'       => 100
                     ],
                     'text' => [
                         'label'       => 'indikator.paste::lang.menu.text',
                         'url'         => Backend::url('indikator/paste/text'),
                         'icon'        => 'icon-file-text',
-                        'permissions' => ['indikator.paste.text']
+                        'permissions' => ['indikator.paste.text'],
+                        'order'       => 200
                     ],
                     'code' => [
                         'label'       => 'indikator.paste::lang.menu.code',
                         'url'         => Backend::url('indikator/paste/code'),
                         'icon'        => 'icon-file-code-o',
-                        'permissions' => ['indikator.paste.code']
+                        'permissions' => ['indikator.paste.code'],
+                        'order'       => 300
                     ]
                 ]
             ]
