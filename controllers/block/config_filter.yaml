@@ -4,6 +4,12 @@
 
 scopes:
 
+    category:
+        label: indikator.paste::lang.form.category
+        modelClass: Indikator\Paste\Models\BlockCategory
+        conditions: category in (:filtered)
+        nameFrom: name
+
     status_active:
         label: indikator.paste::lang.form.status_active
         type: checkbox
@@ -13,12 +19,6 @@ scopes:
         label: indikator.paste::lang.form.status_inactive
         type: checkbox
         conditions: status = 2
-
-    category:
-        label: indikator.paste::lang.form.category
-        modelClass: Indikator\Paste\Models\BlockCategory
-        conditions: category in (:filtered)
-        nameFrom: name
 
     created_date:
         label: indikator.paste::lang.list.created_at

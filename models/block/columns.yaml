@@ -8,6 +8,13 @@ columns:
         label: indikator.paste::lang.form.id
         invisible: true
 
+    color:
+        label: indikator.paste::lang.form.color
+        invisible: true
+        sortable: false
+        type: partial
+        path: ~/plugins/indikator/paste/models/block/_color.htm
+
     code:
         label: indikator.paste::lang.form.code
         invisible: true
@@ -16,16 +23,15 @@ columns:
         label: indikator.paste::lang.form.name
         searchable: true
 
-    sort_order:
-        label: indikator.paste::lang.form.sort_order
-        searchable: true
-
     category:
         label: indikator.paste::lang.form.category
-        invisible: true
         sortable: false
         type: partial
         path: ~/plugins/indikator/paste/models/block/_category.htm
+
+    sort_order:
+        label: indikator.paste::lang.form.sort_order
+        searchable: true
 
     status:
         label: indikator.paste::lang.form.status

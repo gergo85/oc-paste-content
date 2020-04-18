@@ -4,16 +4,6 @@
 
 scopes:
 
-    status_active:
-        label: indikator.paste::lang.form.status_active
-        type: checkbox
-        conditions: status = 1
-
-    status_inactive:
-        label: indikator.paste::lang.form.status_inactive
-        type: checkbox
-        conditions: status = 2
-
     text:
         label: indikator.paste::lang.form.type_text
         type: checkbox
@@ -28,6 +18,16 @@ scopes:
         label: indikator.paste::lang.form.type_mixed
         type: checkbox
         conditions: type = 3
+
+    status_active:
+        label: indikator.paste::lang.form.status_active
+        type: checkbox
+        conditions: status = 1
+
+    status_inactive:
+        label: indikator.paste::lang.form.status_inactive
+        type: checkbox
+        conditions: status = 2
 
     created_date:
         label: indikator.paste::lang.list.created_at

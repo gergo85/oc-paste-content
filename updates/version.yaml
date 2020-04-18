@@ -33,3 +33,4 @@
     - Minor UI and database improvements.
     - rename_common_fields.php
     - change_varchar_length.php
+1.2.9: Improved the list filters.

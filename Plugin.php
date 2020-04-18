@@ -4,9 +4,13 @@ use System\Classes\PluginBase;
 use Backend;
 use Lang;
 use App;
+use Indikator\Paste\Models\Block;
+use Indikator\Paste\Models\BlockCategory;
 use Indikator\Paste\Models\Text;
 use Indikator\Paste\Models\Code;
-use Indikator\Paste\Models\Block;
+use Indikator\Paste\Controllers\Block as BlockControllers;
+use Indikator\Paste\Controllers\Text as TextControllers;
+use Indikator\Paste\Controllers\Code as CodeControllers;
 use Backend\FormWidgets\RichEditor;
 
 class Plugin extends PluginBase
@@ -190,5 +194,49 @@ class Plugin extends PluginBase
                 $widget->addJs('/plugins/indikator/paste/assets/js/froala.paste.plugin.js');
             });
         }
+
+        BlockControllers::extendListColumns(function($list, $model)
+        {
+            if (!$model instanceof Block) {
+                return;
+            }
+
+            if (Block::where('color', '!=', '')->count() == 0) {
+                $list->removeColumn('color');
+            }
+
+            if (BlockCategory::count() == 0) {
+                $list->removeColumn('category');
+            }
+        });
+
+        CodeControllers::extendListColumns(function($list, $model)
+        {
+            if (!$model instanceof Code) {
+                return;
+            }
+
+            if (Code::where('comment', '!=', '')->count() == 0) {
+                $list->removeColumn('comment');
+            }
+        });
+
+        TextControllers::extendListColumns(function($list, $model)
+        {
+            if (!$model instanceof Text) {
+                return;
+            }
+
+            if (Text::where('comment', '!=', '')->count() == 0) {
+                $list->removeColumn('comment');
+            }
+        });
+
+        BlockControllers::extendListFilterScopes(function($filter)
+        {
+            if (BlockCategory::count() == 0) {
+                $filter->removeScope('category');
+            }
+        });
     }
 }
