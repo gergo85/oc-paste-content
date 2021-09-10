@@ -1,0 +1,11 @@
+{
+    "name": "indikator/paste-plugin",
+    "type": "october-plugin",
+    "description": "Use this plugin if you want to paste own predetermined simple content (snippets) or HTML blocks to the CMS or plugins.",
+    "homepage": "https://octobercms.com/plugin/indikator-paste",
+    "keywords": ["october", "octobercms"],
+    "license": "MIT",
+    "require": {
+        "composer/installers": "~1.0"
+    }
+}
